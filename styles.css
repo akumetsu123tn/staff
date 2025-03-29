@@ -1,0 +1,51 @@
+/* Custom styles to enhance Tailwind */
+.manga-card {
+    transition: transform 0.2s ease;
+}
+
+.manga-card:hover {
+    transform: translateY(-5px);
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Auth component styles */
+#auth-section {
+    transition: all 0.3s ease;
+}
+
+#user-credits {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#login-btn, #logout-btn {
+    transition: all 0.2s ease;
+}
+
+#login-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#logout-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

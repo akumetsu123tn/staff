@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightning Degree Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">Lightning Degree</h1>
+            <nav>
+                <ul class="flex space-x-6 items-center">
+                    <li><a href="#" class="hover:text-blue-600">Home</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Manga</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Hot</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Search</a></li>
+                    <li id="auth-section" class="flex items-center space-x-4">
+                        <span id="user-credits" class="hidden bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-coins mr-1"></i> <span id="credits-count">0</span>
+                        </span>
+                        <button id="login-btn" class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">
+                            <i class="fas fa-sign-in-alt mr-1"></i> Login
+                        </button>
+                        <button id="logout-btn" class="hidden bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700">
+                            <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Manga Section -->
+    <section class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-6">Popular Manga</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Manga cards will be added here -->
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="container mx-auto px-4 py-8 bg-white shadow-md rounded-lg my-8">
+        <h2 class="text-3xl font-bold mb-6">Search Hot Manga</h2>
+        <div class="flex">
+            <input type="text" placeholder="Search manga..." class="flex-grow px-4 py-2 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button class="bg-blue-600 text-white px-6 py-2 rounded-r-lg hover:bg-blue-700">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
