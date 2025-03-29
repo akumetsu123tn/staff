@@ -2,11 +2,14 @@ USE LightningDegreeDB;
 GO
 
 -- Insert sample users
-INSERT INTO Users (Username, Email, PasswordHash, Credits, CreatedAt)
+INSERT INTO Users (Username, Email, PasswordHash, Credits, RoleID, CreatedAt)
 VALUES 
-('john_doe', 'john@example.com', 'hashed_password_1', 100, GETDATE()),
-('jane_smith', 'jane@example.com', 'hashed_password_2', 50, GETDATE()),
-('mike_wilson', 'mike@example.com', 'hashed_password_3', 75, GETDATE());
+('admin', 'admin@example.com', 'hashed_admin_password', 1000, 1, GETDATE()), -- Admin user
+('manager1', 'manager@example.com', 'hashed_manager_password', 500, 2, GETDATE()), -- Manager
+('artist1', 'artist@example.com', 'hashed_artist_password', 300, 3, GETDATE()), -- Artist
+('john_doe', 'john@example.com', 'hashed_password_1', 100, 4, GETDATE()),
+('jane_smith', 'jane@example.com', 'hashed_password_2', 50, 4, GETDATE()),
+('mike_wilson', 'mike@example.com', 'hashed_password_3', 75, 4, GETDATE());
 
 -- Insert sample tags
 INSERT INTO Tags (Name)

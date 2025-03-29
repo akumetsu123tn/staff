@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - Lightning Degree</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <h2>Staff Dashboard</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#overview" class="active">Overview</a></li>
+                <li><a href="#manga-management">Manga Management</a></li>
+                <li><a href="#chapter-management">Chapter Management</a></li>
+                <li><a href="#user-management" class="admin-only">User Management</a></li>
+                <li><a href="#staff-management" class="admin-only">Staff Management</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Welcome, <span id="staff-name">Staff Member</span></h1>
+                    <p id="staff-role">Role: <span>Loading...</span></p>
+                </div>
+                <div class="header-right">
+                    <button id="logout-btn" class="btn-logout">Logout</button>
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section">
+                <h2>Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Manga</h3>
+                        <p id="total-manga">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p id="total-users">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Views</h3>
+                        <p id="total-views">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Recent Updates</h3>
+                        <p id="recent-updates">Loading...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manga Management Section -->
+            <section id="manga-management" class="dashboard-section">
+                <h2>Manga Management</h2>
+                <div class="action-bar">
+                    <button id="add-manga-btn" class="btn-primary">Add New Manga</button>
+                </div>
+                <div class="manga-list">
+                    <!-- Manga items will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <!-- Chapter Management Section -->
+            <section id="chapter-management" class="dashboard-section">
+                <h2>Chapter Management</h2>
+                <div class="action-bar">
+                    <button id="add-chapter-btn" class="btn-primary">Add New Chapter</button>
+                </div>
+                <div class="chapter-list">
+                    <!-- Chapter items will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <!-- User Management Section (Admin Only) -->
+            <section id="user-management" class="dashboard-section admin-only">
+                <h2>User Management</h2>
+                <div class="user-list">
+                    <!-- User items will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <!-- Staff Management Section (Admin Only) -->
+            <section id="staff-management" class="dashboard-section admin-only">
+                <h2>Staff Management</h2>
+                <div class="action-bar">
+                    <button id="add-staff-btn" class="btn-primary">Add New Staff</button>
+                </div>
+                <div class="staff-list">
+                    <!-- Staff items will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="dashboard-section">
+                <h2>Analytics</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Popular Manga</h3>
+                        <div id="popular-manga-chart"></div>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>User Growth</h3>
+                        <div id="user-growth-chart"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="dashboard-section">
+                <h2>Settings</h2>
+                <div class="settings-form">
+                    <h3>Profile Settings</h3>
+                    <form id="profile-settings-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">New Password</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html> 

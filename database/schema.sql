@@ -5,6 +5,13 @@ GO
 USE LightningDegreeDB;
 GO
 
+-- Create Roles table
+CREATE TABLE Roles (
+    RoleID INT IDENTITY(1,1) PRIMARY KEY,
+    RoleName NVARCHAR(50) NOT NULL UNIQUE,
+    Description NVARCHAR(200)
+);
+
 -- Create Users table
 CREATE TABLE Users (
     UserID INT IDENTITY(1,1) PRIMARY KEY,
@@ -12,6 +19,7 @@ CREATE TABLE Users (
     Email NVARCHAR(100) NOT NULL UNIQUE,
     PasswordHash NVARCHAR(256) NOT NULL,
     Credits INT DEFAULT 0,
+    RoleID INT FOREIGN KEY REFERENCES Roles(RoleID) DEFAULT 1, -- Default role is 1 (User)
     CreatedAt DATETIME DEFAULT GETDATE(),
     LastLogin DATETIME
 );
@@ -96,10 +104,19 @@ CREATE TABLE Transactions (
     CreatedAt DATETIME DEFAULT GETDATE()
 );
 
+-- Insert default roles
+INSERT INTO Roles (RoleName, Description)
+VALUES 
+('Admin', 'Full system access with all permissions'),
+('Manager', 'Staff manager with manga and user management permissions'),
+('Artist', 'Staff member with manga content management permissions'),
+('User', 'Standard user with basic permissions');
+
 -- Create indexes for better performance
 CREATE INDEX IX_Manga_Title ON Manga(Title);
 CREATE INDEX IX_Chapters_MangaID ON Chapters(MangaID);
 CREATE INDEX IX_ChapterImages_ChapterID ON ChapterImages(ChapterID);
 CREATE INDEX IX_UserFavorites_UserID ON UserFavorites(UserID);
 CREATE INDEX IX_UserReadHistory_UserID ON UserReadHistory(UserID);
-CREATE INDEX IX_Comments_ChapterID ON Comments(ChapterID); 
+CREATE INDEX IX_Comments_ChapterID ON Comments(ChapterID);
+CREATE INDEX IX_Users_RoleID ON Users(RoleID); 
